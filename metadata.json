@@ -1,0 +1,6 @@
+{
+  "name": "Agrovia - Smart Farming Hero",
+  "description": "Precision Datum Geospatial professional surveying, mapping and geospatial solutions platform for land development, construction, infrastructure, and property in Nairobi, Kenya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
