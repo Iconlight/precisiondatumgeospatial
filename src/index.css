@@ -1,12 +1,45 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
+  /* Hide scrollbar for all browsers while maintaining smooth scrolling */
+  * {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    -webkit-appearance: none !important;
+  }
+
+  html, body {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     color: #ffffff;
     background-color: #0b1309;
     overflow-x: hidden;
   }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 .font-editorial {
@@ -25,4 +58,3 @@
 .animate-bounce-slow {
   animation: bounceSlow 2s ease-in-out infinite;
 }
-

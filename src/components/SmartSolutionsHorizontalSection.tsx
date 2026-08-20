@@ -96,10 +96,11 @@ export const SmartSolutionsHorizontalSection: React.FC = () => {
     <section 
       ref={targetRef} 
       id="smart-solutions-horizontal-section"
-      className="relative h-[620vh] bg-[#fbfdfa] text-zinc-900 border-t border-zinc-200/60"
+      style={{ height: '600px' }}
+      className="relative h-[600px] bg-[#fbfdfa] text-zinc-900 border-t border-zinc-200/60 overflow-hidden"
     >
-      {/* Sticky Full-Viewport Container with guaranteed fit and zero clipping */}
-      <div className="sticky top-0 h-screen max-h-screen w-full flex flex-col justify-between overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16 pt-[20px] pb-[82px] max-w-7xl mx-auto">
+      {/* Container with guaranteed fit inside 600px height */}
+      <div className="h-full w-full flex flex-col justify-between overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16 pt-5 pb-5 max-w-7xl mx-auto">
         {/* Compact, Adaptive Header */}
         <motion.div 
           initial={{ opacity: 0, y: 44 }}
@@ -140,11 +141,8 @@ export const SmartSolutionsHorizontalSection: React.FC = () => {
         </motion.div>
 
         {/* Horizontally Scrolling Cards Track with Adaptive Height */}
-        <div className="relative w-full overflow-visible my-auto py-2 pb-[8px] h-[324.188px]">
-          <motion.div 
-            style={{ x }} 
-            className="flex gap-5 sm:gap-7 md:gap-9 items-stretch"
-          >
+        <div className="relative w-full overflow-x-auto no-scrollbar my-auto py-2 pb-[8px]">
+          <div className="flex gap-5 sm:gap-7 md:gap-9 items-stretch pb-2">
             {cards.map((card) => (
               <div
                 key={card.id}
@@ -187,7 +185,7 @@ export const SmartSolutionsHorizontalSection: React.FC = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Scroll Progress Indicator Bar - Perfectly Centered */}

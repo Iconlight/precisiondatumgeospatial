@@ -45,7 +45,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070e06] text-white flex flex-col selection:bg-[#D2F835] selection:text-black">
+    <div className="min-h-screen bg-[#070e06] text-white flex flex-col selection:bg-[#D2F835] selection:text-black no-scrollbar">
       {/* HERO CONTAINER */}
       <section 
         id="hero-section"

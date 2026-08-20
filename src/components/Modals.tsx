@@ -86,7 +86,7 @@ export const InvestModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto no-scrollbar">
         {/* Soft Dimmed Frosted Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -102,7 +102,7 @@ export const InvestModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 24 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-[28px] sm:rounded-[36px] bg-[#fbfdfa] border border-zinc-200/90 p-5 sm:p-7 md:p-9 shadow-[0_25px_70px_rgba(13,40,24,0.22)] text-zinc-900"
+          className="relative z-10 w-full max-w-2xl max-h-[92vh] overflow-y-auto no-scrollbar rounded-[28px] sm:rounded-[36px] bg-[#fbfdfa] border border-zinc-200/90 p-5 sm:p-7 md:p-9 shadow-[0_25px_70px_rgba(13,40,24,0.22)] text-zinc-900"
         >
           {/* Close Button */}
           <button
@@ -399,7 +399,7 @@ export const FarmersModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto no-scrollbar">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -413,7 +413,7 @@ export const FarmersModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 24 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 w-full max-w-2xl rounded-[28px] sm:rounded-[36px] bg-[#fbfdfa] border border-zinc-200/90 p-5 sm:p-7 md:p-8 shadow-[0_25px_70px_rgba(13,40,24,0.22)] text-zinc-900"
+          className="relative z-10 w-full max-w-2xl no-scrollbar rounded-[28px] sm:rounded-[36px] bg-[#fbfdfa] border border-zinc-200/90 p-5 sm:p-7 md:p-8 shadow-[0_25px_70px_rgba(13,40,24,0.22)] text-zinc-900"
         >
           <button
             onClick={onClose}
@@ -440,7 +440,7 @@ export const FarmersModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             Precision Datum Geospatial Ltd delivers verified spatial intelligence for landowners, developers, engineers, and legal professionals across Kenya.
           </p>
 
-          <div className="mt-5 space-y-2.5 max-h-[55vh] overflow-y-auto pr-1">
+          <div className="mt-5 space-y-2.5 max-h-[55vh] overflow-y-auto no-scrollbar pr-1">
             {capabilitiesOverview.map((item, idx) => (
               <div
                 key={idx}

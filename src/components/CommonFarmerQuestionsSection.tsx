@@ -289,24 +289,48 @@ export const CommonFarmerQuestionsSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
-            {corePrinciples.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 transition shadow-xs flex flex-col justify-between"
-              >
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-7 h-7 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shrink-0 shadow-2xs">
-                    {item.icon}
+            {corePrinciples.map((item, idx) => {
+              const isGreen = ['VERIFIED', 'PRACTICAL', 'INTEGRITY'].includes(item.title);
+              return (
+                <div
+                  key={idx}
+                  className={`p-4 sm:p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between ${
+                    isGreen
+                      ? 'bg-[#0d2818] text-white border border-emerald-800/90 shadow-md hover:border-emerald-500/70 hover:shadow-lg'
+                      : 'bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 text-zinc-900 shadow-xs'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5 mb-2.5">
+                    <div
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-2xs ${
+                        isGreen
+                          ? 'bg-emerald-800/80 border border-emerald-600/60 text-[#D2F835]'
+                          : 'bg-white border border-zinc-200 text-emerald-700'
+                      }`}
+                    >
+                      {item.title === 'VERIFIED' ? (
+                        <ShieldCheck className={`w-4 h-4 ${isGreen ? 'text-[#D2F835]' : 'text-emerald-700'}`} />
+                      ) : item.title === 'PRACTICAL' ? (
+                        <CheckCircle className={`w-4 h-4 ${isGreen ? 'text-[#D2F835]' : 'text-emerald-700'}`} />
+                      ) : item.title === 'INTEGRITY' ? (
+                        <Eye className={`w-4 h-4 ${isGreen ? 'text-[#D2F835]' : 'text-emerald-700'}`} />
+                      ) : (
+                        item.icon
+                      )}
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <h4 className={`text-xs sm:text-sm font-bold tracking-wide ${isGreen ? 'text-white' : 'text-zinc-900'}`}>
+                        {item.title}
+                      </h4>
+                      {isGreen && <span className="w-1.5 h-1.5 rounded-full bg-[#D2F835]" />}
+                    </div>
                   </div>
-                  <h4 className="text-xs sm:text-sm font-bold tracking-wide text-zinc-900">
-                    {item.title}
-                  </h4>
+                  <p className={`text-xs leading-relaxed font-normal ${isGreen ? 'text-emerald-100/90' : 'text-zinc-600'}`}>
+                    {item.desc}
+                  </p>
                 </div>
-                <p className="text-xs text-zinc-600 leading-relaxed font-normal">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>
